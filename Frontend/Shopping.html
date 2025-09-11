@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - ExoraMarket</title>
+    <link rel="stylesheet" href="Shopping.css">
+</head>
+<body>
+    <!-- Floating Particles Background -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            🎉 FREE SHIPPING on orders over 50,000 RWF | ✨ 25% OFF Everything - Limited Time!
+        </div>
+        
+        <div class="cart-header">
+            <div class="container">
+                <nav class="cart-nav">
+                    <div class="logo">ExoraMarket</div>
+                    <div class="cart-breadcrumb">
+                        <a href="#" class="breadcrumb-link">Home</a>
+                        <span>></span>
+                        <span>Shopping Cart</span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Page Title Section -->
+    <section class="page-title-section">
+        <div class="container">
+            <h1 class="page-title">Your Shopping Cart</h1>
+            <p class="page-subtitle">Review your items before checkout</p>
+            
+            <div class="cart-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-items">4</span>
+                    <span class="stat-label">Items</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="total-savings">250K</span>
+                    <span class="stat-label">Total Savings</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">FREE</span>
+                    <span class="stat-label">Shipping</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="cart-grid">
+                <!-- Cart Items Section -->
+                <div class="cart-items-section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            🛍️ Your Items
+                        </h2>
+                        <button class="clear-cart-btn" onclick="clearCart()">
+                            🗑️ Clear Cart
+                        </button>
+                    </div>
+                    
+                    <!-- Cart Items -->
+                    <div class="cart-items" id="cart-items">
+                        <!-- Item 1 -->
+                        <div class="cart-item" data-item-id="1">
+                            <div class="item-image-container">
+                                <div class="item-image">📱</div>
+                                <div class="item-badge">HOT</div>
+                            </div>
+                            
+                            <div class="item-details">
+                                <h3 class="item-name">Premium Smartphone Pro</h3>
+                                <div class="item-specs">
+                                    <span class="spec-tag">📱 128GB Storage</span>
+                                    <span class="spec-tag">🎨 Midnight Black</span>
+                                    <span class="spec-tag">📶 5G Ready</span>
+                                </div>
+                                <div class="item-features">
+                                    <span class="feature-icon" title="Free Shipping">🚚</span>
+                                    <span class="feature-icon" title="1 Year Warranty">🛡️</span>
+                                    <span class="feature-icon" title="Fast Delivery">⚡</span>
+                                    <span class="feature-icon" title="Easy Returns">🔄</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="save-later-btn">💾 Save for Later</button>
+                                    <button class="remove-btn" onclick="removeItem(1)">🗑️ Remove</button>
+                                </div>
+                            </div>
+                            
+                            <div class="item-controls">
+                                <div class="quantity-controls">
+                                    <button class="qty-btn" onclick="updateQuantity(1, -1)">-</button>
+                                    <span class="qty-number" id="qty-1">1</span>
+                                    <button class="qty-btn" onclick="updateQuantity(1, 1)">+</button>
+                                </div>
+                                <div class="item-price">
+                                    <span class="current-price" id="price-1">749,000 RWF</span>
+                                    <span class="original-price">999,000 RWF</span>
+                                    <span class="savings">Save 250,000 RWF</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="cart-item" data-item-id="2">
+                            <div class="item-image-container">
+                                <div class="item-image">👟</div>
+                                <div class="item-badge">NEW</div>
+                            </div>
+                            
+                            <div class="item-details">
+                                <h3 class="item-name">Athletic Running Shoes</h3>
+                                <div class="item-specs">
+                                    <span class="spec-tag">👟 Size 42</span>
+                                    <span class="spec-tag">🔵 Ocean Blue</span>
+                                    <span class="spec-tag">🏃 Running</span>
+                                </div>
+                                <div class="item-features">
+                                    <span class="feature-icon" title="Free Shipping">🚚</span>
+                                    <span class="feature-icon" title="6 Month Warranty">🛡️</span>
+                                    <span class="feature-icon" title="Comfort Fit">👍</span>
+                                    <span class="feature-icon" title="Easy Returns">🔄</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="save-later-btn">💾 Save for Later</button>
+                                    <button class="remove-btn" onclick="removeItem(2)">🗑️ Remove</button>
+                                </div>
+                            </div>
+                            
+                            <div class="item-controls">
+                                <div class="quantity-controls">
+                                    <button class="qty-btn" onclick="updateQuantity(2, -1)">-</button>
+                                    <span class="qty-number" id="qty-2">1</span>
+                                    <button class="qty-btn" onclick="updateQuantity(2, 1)">+</button>
+                                </div>
+                                <div class="item-price">
+                                    <span class="current-price" id="price-2">129,000 RWF</span>
+                                    <span class="original-price">149,000 RWF</span>
+                                    <span class="savings">Save 20,000 RWF</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div class="cart-item" data-item-id="3">
+                            <div class="item-image-container">
+                                <div class="item-image">👕</div>
+                            </div>
+                            
+                            <div class="item-details">
+                                <h3 class="item-name">Designer Cotton T-Shirt</h3>
+                                <div class="item-specs">
+                                    <span class="spec-tag">👕 Size Large</span>
+                                    <span class="spec-tag">⚪ Pure White</span>
+                                    <span class="spec-tag">🧵 100% Cotton</span>
+                                </div>
+                                <div class="item-features">
+                                    <span class="feature-icon" title="Free Shipping">🚚</span>
+                                    <span class="feature-icon" title="Machine Washable">🧺</span>
+                                    <span class="feature-icon" title="Soft Fabric">✨</span>
+                                    <span class="feature-icon" title="Easy Returns">🔄</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="save-later-btn">💾 Save for Later</button>
+                                    <button class="remove-btn" onclick="removeItem(3)">🗑️ Remove</button>
+                                </div>
+                            </div>
+                            
+                            <div class="item-controls">
+                                <div class="quantity-controls">
+                                    <button class="qty-btn" onclick="updateQuantity(3, -1)">-</button>
+                                    <span class="qty-number" id="qty-3">2</span>
+                                    <button class="qty-btn" onclick="updateQuantity(3, 1)">+</button>
+                                </div>
+                                <div class="item-price">
+                                    <span class="current-price" id="price-3">78,000 RWF</span>
+                                    <span class="original-price">98,000 RWF</span>
+                                    <span class="savings">Save 20,000 RWF</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 4 -->
+                        <div class="cart-item" data-item-id="4">
+                            <div class="item-image-container">
+                                <div class="item-image">🎧</div>
+                                <div class="item-badge">SALE</div>
+                            </div>
+                            
+                            <div class="item-details">
+                                <h3 class="item-name">Wireless Bluetooth Headphones</h3>
+                                <div class="item-specs">
+                                    <span class="spec-tag">🎧 Over-Ear</span>
+                                    <span class="spec-tag">🔋 40H Battery</span>
+                                    <span class="spec-tag">🎵 Hi-Fi Sound</span>
+                                </div>
+                                <div class="item-features">
+                                    <span class="feature-icon" title="Free Shipping">🚚</span>
+                                    <span class="feature-icon" title="1 Year Warranty">🛡️</span>
+                                    <span class="feature-icon" title="Noise Cancelling">🔇</span>
+                                    <span class="feature-icon" title="Easy Returns">🔄</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="save-later-btn">💾 Save for Later</button>
+                                    <button class="remove-btn" onclick="removeItem(4)">🗑️ Remove</button>
+                                </div>
+                            </div>
+                            
+                            <div class="item-controls">
+                                <div class="quantity-controls">
+                                    <button class="qty-btn" onclick="updateQuantity(4, -1)">-</button>
+                                    <span class="qty-number" id="qty-4">1</span>
+                                    <button class="qty-btn" onclick="updateQuantity(4, 1)">+</button>
+                                </div>
+                                <div class="item-price">
+                                    <span class="current-price" id="price-4">45,000 RWF</span>
+                                    <span class="original-price">60,000 RWF</span>
+                                    <span class="savings">Save 15,000 RWF</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommendations -->
+                    <div class="recommendations">
+                        <h3 class="recommendations-title">✨ Customers Also Bought</h3>
+                        <div class="recommendations-grid">
+                            <div class="recommendation-item" onclick="addRecommendation('smartwatch')">
+                                <div class="rec-image">⌚</div>
+                                <div class="rec-name">Smart Watch Pro</div>
+                                <div class="rec-price">180,000 RWF</div>
+                            </div>
+                            <div class="recommendation-item" onclick="addRecommendation('powerbank')">
+                                <div class="rec-image">🔋</div>
+                                <div class="rec-name">Power Bank 20K mAh</div>
+                                <div class="rec-price">35,000 RWF</div>
+                            </div>
+                            <div class="recommendation-item" onclick="addRecommendation('case')">
+                                <div class="rec-image">📱</div>
+                                <div class="rec-name">Phone Protection Case</div>
+                                <div class="rec-price">15,000 RWF</div>
+                            </div>
+                            <div class="recommendation-item" onclick="addRecommendation('charger')">
+                                <div class="rec-image">⚡</div>
+                                <div class="rec-name">Fast Wireless Charger</div>
+                                <div class="rec-price">25,000 RWF</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h2 class="summary-title">📊 Order Summary</h2>
+                    
+                    <!-- Promo Code Section -->
+                    <div class="promo-section">
+                        <div class="promo-title">
+                            🎟️ Apply Promo Code
+                        </div>
+                        <div class="promo-input-group">
+                            <input type="text" class="promo-input" placeholder="Enter promo code" id="promoCode">
+                            <button class="promo-btn" onclick="applyPromo()">Apply</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <div class="summary-row">
+                            <span class="summary-label">🛍️ Subtotal (5 items)</span>
+                            <span class="summary-value" id="subtotal">1,001,000 RWF</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">🚚 Shipping</span>
+                            <span class="summary-value" id="shipping">FREE</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">💰 You Save</span>
+                            <span class="summary-value savings-value" id="savings">-305,000 RWF</span>
+                        </div>
+                        <div class="summary-row" id="discount-row" style="display: none;">
+                            <span class="summary-label">🎟️ Promo Discount</span>
+                            <span class="summary-value savings-value" id="promo-discount">-0 RWF</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">📋 Total</span>
+                            <span class="summary-value" id="total">1,001,000 RWF</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="cart-actions">
+                        <button class="checkout-btn" onclick="proceedToCheckout()">
+                            🚀 Proceed to Checkout
+                        </button>
+                        <button class="continue-shopping-btn" onclick="continueShopping()">
+                            🛍️ Continue Shopping
+                        </button>
+                    </div>
+                    
+                    <!-- Security Info -->
+                    <div class="security-info">
+                        <div class="security-badges">
+                            <div class="security-badge">
+                                <div class="security-icon">🔒</div>
+                                <div>SSL Secure</div>
+                            </div>
+                            <div class="security-badge">
+                                <div class="security-icon">🛡️</div>
+                                <div>Safe Payment</div>
+                            </div>
+                            <div class="security-badge">
+                                <div class="security-icon">🚚</div>
+                                <div>Free Shipping</div>
+                            </div>
+                            <div class="security-badge">
+                                <div class="security-icon">🔄</div>
+                                <div>Easy Returns</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: rgba(21, 36, 22, 0.7); margin-top: 0.5rem;">
+                            🔒 Your information is protected with 256-bit SSL encryption
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../Backend/Shopping.js"> </script>
+</body>
+</html>

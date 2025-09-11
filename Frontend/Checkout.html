@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ExoraMarket</title>
+    <link rel="stylesheet" href="Checkout.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            🔒 Secure Checkout | SSL Protected | 256-bit Encryption
+        </div>
+        
+        <div class="checkout-header">
+            <div class="container">
+                <nav class="checkout-nav">
+                    <div class="logo">ExoraMarket</div>
+                    <div class="checkout-security">
+                        <div class="security-badge">🔒 Secure Checkout</div>
+                        <div class="security-badge">✅ SSL Protected</div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Progress Steps -->
+    <section class="progress-container">
+        <div class="container">
+            <div class="progress-steps">
+                <div class="step completed">
+                    <div class="step-number">✓</div>
+                    <span>Cart</span>
+                </div>
+                <div class="step active">
+                    <div class="step-number">2</div>
+                    <span>Checkout</span>
+                </div>
+                <div class="step pending">
+                    <div class="step-number">3</div>
+                    <span>Payment</span>
+                </div>
+                <div class="step pending">
+                    <div class="step-number">4</div>
+                    <span>Confirmation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="checkout-grid">
+                <!-- Left Column - Forms -->
+                <div class="checkout-forms fade-in">
+                    
+                    <!-- User Options -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            👤 Account Options
+                        </h2>
+                        <div class="user-options">
+                            <div class="user-option active" id="guest-option">
+                                <h4>Continue as Guest</h4>
+                                <p>Quick checkout without creating an account</p>
+                            </div>
+                            <div class="user-option" id="login-option">
+                                <h4>Sign In</h4>
+                                <p>Access your saved addresses and preferences</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            📧 Contact Information
+                        </h2>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+250 788 123 456">
+                        </div>
+                    </div>
+                    
+                    <!-- Shipping Address -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            🚚 Shipping Address
+                        </h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address1">Address Line 1 *</label>
+                            <input type="text" id="address1" name="address1" required placeholder="Street address or P.O. Box">
+                        </div>
+                        <div class="form-group">
+                            <label for="address2">Address Line 2</label>
+                            <input type="text" id="address2" name="address2" placeholder="Apartment, suite, etc. (optional)">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <input type="text" id="city" name="city" required placeholder="Kigali">
+                            </div>
+                            <div class="form-group">
+                                <label for="province">Province *</label>
+                                <select id="province" name="province" required>
+                                    <option value="">Select Province</option>
+                                    <option value="Kigali">Kigali</option>
+                                    <option value="Eastern">Eastern</option>
+                                    <option value="Northern">Northern</option>
+                                    <option value="Southern">Southern</option>
+                                    <option value="Western">Western</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="postalCode">Postal Code</label>
+                                <input type="text" id="postalCode" name="postalCode" placeholder="Optional">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country *</label>
+                                <select id="country" name="country" required>
+                                    <option value="Rwanda">Rwanda</option>
+                                    <option value="Uganda">Uganda</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Tanzania">Tanzania</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Shipping Options -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            📦 Shipping Options
+                        </h2>
+                        <div class="shipping-options">
+                            <div class="shipping-option active" data-price="0">
+                                <div class="shipping-info">
+                                    <div class="shipping-icon">🚚</div>
+                                    <div class="shipping-details">
+                                        <h4>Standard Shipping</h4>
+                                        <p>5-7 business days</p>
+                                    </div>
+                                </div>
+                                <div class="shipping-price">FREE</div>
+                            </div>
+                            <div class="shipping-option" data-price="5000">
+                                <div class="shipping-info">
+                                    <div class="shipping-icon">⚡</div>
+                                    <div class="shipping-details">
+                                        <h4>Express Shipping</h4>
+                                        <p>2-3 business days</p>
+                                    </div>
+                                </div>
+                                <div class="shipping-price">5,000 RWF</div>
+                            </div>
+                            <div class="shipping-option" data-price="15000">
+                                <div class="shipping-info">
+                                    <div class="shipping-icon">🚀</div>
+                                    <div class="shipping-details">
+                                        <h4>Next Day Delivery</h4>
+                                        <p>Order by 2 PM for next day</p>
+                                    </div>
+                                </div>
+                                <div class="shipping-price">15,000 RWF</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Method -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            💳 Payment Method
+                        </h2>
+                        <div class="payment-methods">
+                            <div class="payment-method active" data-method="card">
+                                <div class="payment-icon">💳</div>
+                                <h4>Credit/Debit Card</h4>
+                            </div>
+                            <div class="payment-method" data-method="momo">
+                                <div class="payment-icon">📱</div>
+                                <h4>Mobile Money</h4>
+                            </div>
+                            <div class="payment-method" data-method="bank">
+                                <div class="payment-icon">🏦</div>
+                                <h4>Bank Transfer</h4>
+                            </div>
+                            <div class="payment-method" data-method="cod">
+                                <div class="payment-icon">💵</div>
+                                <h4>Cash on Delivery</h4>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Details Form -->
+                        <div id="card-form" class="payment-form">
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number *</label>
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiryDate">Expiry Date *</label>
+                                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV *</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardName">Name on Card *</label>
+                                <input type="text" id="cardName" name="cardName" placeholder="John Doe">
+                            </div>
+                        </div>
+                        
+                        <div id="momo-form" class="payment-form" style="display: none;">
+                            <div class="form-group">
+                                <label for="momoProvider">Mobile Money Provider *</label>
+                                <select id="momoProvider" name="momoProvider">
+                                    <option value="">Select Provider</option>
+                                    <option value="mtn">MTN Mobile Money</option>
+                                    <option value="airtel">Airtel Money</option>
+                                    <option value="tigo">Tigo Cash</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="momoNumber">Mobile Number *</label>
+                                <input type="tel" id="momoNumber" name="momoNumber" placeholder="+250 788 123 456">
+                            </div>
+                        </div>
+                        
+                        <div id="bank-form" class="payment-form" style="display: none;">
+                            <div class="form-group">
+                                <label for="bankName">Select Bank *</label>
+                                <select id="bankName" name="bankName">
+                                    <option value="">Choose Bank</option>
+                                    <option value="bnr">Bank of Kigali</option>
+                                    <option value="equity">Equity Bank</option>
+                                    <option value="gt">GT Bank</option>
+                                    <option value="cogebanque">Cogebanque</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="accountNumber">Account Number *</label>
+                                <input type="text" id="accountNumber" name="accountNumber" placeholder="Your account number">
+                            </div>
+                        </div>
+                        
+                        <div id="cod-form" class="payment-form" style="display: none;">
+                            <div style="padding: 1rem; background: rgba(190, 227, 87, 0.1); border-radius: 10px; border: 1px solid rgba(190, 227, 87, 0.3);">
+                                <h4 style="color: rgb(21, 36, 22); margin-bottom: 0.5rem;">💵 Cash on Delivery</h4>
+                                <p style="color: rgba(21, 36, 22, 0.7); font-size: 0.9rem;">
+                                    Pay when your order is delivered to your doorstep. Additional COD fee: 2,000 RWF
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Special Instructions -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            📝 Special Instructions
+                        </h2>
+                        <div class="form-group">
+                            <label for="instructions">Delivery Instructions (Optional)</label>
+                            <textarea id="instructions" name="instructions" rows="3" placeholder="Any special delivery instructions, gate code, landmark references, etc."></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Order Summary -->
+                <div class="order-summary fade-in">
+                    <h2 class="summary-title">📋 Order Summary</h2>
+                    
+                    <!-- Cart Items -->
+                    <div class="cart-items">
+                        <div class="cart-item">
+                            <div class="item-image">📱</div>
+                            <div class="item-details">
+                                <div class="item-name">Premium Smartphone Pro</div>
+                                <div class="item-specs">Color: Black, Storage: 128GB</div>
+                                <div class="item-qty">
+                                    Qty: 
+                                    <div class="qty-controls">
+                                        <button class="qty-btn" onclick="updateQty(this, -1)">−</button>
+                                        <span class="qty-number">1</span>
+                                        <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-price">749,000 RWF</div>
+                        </div>
+                        
+                        <div class="cart-item">
+                            <div class="item-image">👟</div>
+                            <div class="item-details">
+                                <div class="item-name">Athletic Running Shoes</div>
+                                <div class="item-specs">Size: 42, Color: Blue</div>
+                                <div class="item-qty">
+                                    Qty: 
+                                    <div class="qty-controls">
+                                        <button class="qty-btn" onclick="updateQty(this, -1)">−</button>
+                                        <span class="qty-number">1</span>
+                                        <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-price">129,000 RWF</div>
+                        </div>
+                        
+                        <div class="cart-item">
+                            <div class="item-image">👕</div>
+                            <div class="item-details">
+                                <div class="item-name">Designer Cotton T-Shirt</div>
+                                <div class="item-specs">Size: L, Color: White</div>
+                                <div class="item-qty">
+                                    Qty: 
+                                    <div class="qty-controls">
+                                        <button class="qty-btn" onclick="updateQty(this, -1)">−</button>
+                                        <span class="qty-number">2</span>
+                                        <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-price">78,000 RWF</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Promo Code -->
+                    <div class="promo-section">
+                        <div class="promo-title">
+                            🎟️ Promo Code
+                        </div>
+                        <div class="promo-input-group">
+                            <input type="text" class="promo-input" placeholder="Enter promo code" id="promoCode">
+                            <button class="promo-btn" onclick="applyPromo()">Apply</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Totals -->
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span class="total-label">Subtotal (4 items)</span>
+                            <span class="total-value" id="subtotal">956,000 RWF</span>
+                        </div>
+                        <div class="total-row">
+                            <span class="total-label">Shipping</span>
+                            <span class="total-value" id="shipping-cost">FREE</span>
+                        </div>
+                        <div class="total-row">
+                            <span class="total-label">Tax (18% VAT)</span>
+                            <span class="total-value" id="tax">172,080 RWF</span>
+                        </div>
+                        <div class="total-row" id="discount-row" style="display: none;">
+                            <span class="total-label">Discount</span>
+                            <span class="total-value savings" id="discount">-0 RWF</span>
+                        </div>
+                        <div class="total-row" id="cod-fee-row" style="display: none;">
+                            <span class="total-label">COD Fee</span>
+                            <span class="total-value" id="cod-fee">2,000 RWF</span>
+                        </div>
+                        <div class="total-row">
+                            <span class="total-label">Total</span>
+                            <span class="total-value" id="final-total">1,128,080 RWF</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Place Order Button -->
+                    <button class="place-order-btn" onclick="placeOrder()">
+                        🛒 Place Order - <span id="order-total">1,128,080 RWF</span>
+                    </button>
+                    
+                    <div class="security-info">
+                        🔒 Your payment information is secure and encrypted
+                    </div>
+                    
+                    <!-- Trust Badges -->
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <div class="trust-icon">🔒</div>
+                            <div>SSL Secure</div>
+                        </div>
+                        <div class="trust-badge">
+                            <div class="trust-icon">🛡️</div>
+                            <div>Buyer Protection</div>
+                        </div>
+                        <div class="trust-badge">
+                            <div class="trust-icon">🔄</div>
+                            <div>Easy Returns</div>
+                        </div>
+                        <div class="trust-badge">
+                            <div class="trust-icon">📞</div>
+                            <div>24/7 Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../Backend/Checkout.js"></script>
+</body>
+</html>

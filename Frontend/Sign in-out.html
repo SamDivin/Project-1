@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EzyCart.com Login/Sign up</title>
+    <link rel="stylesheet" href="Sign in-out.css">
+</head>
+<body>
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container" id="container">
+        <div class="forms-container">
+            <!-- Sign In Form -->
+            <div class="sign-in-form form-container">
+                <form action="#">
+                    <h1>Welcome Back</h1>
+                    <div class="social-container">
+                        <a href="#" class="social">G</a>
+                        <a href="#" class="social">f</a>
+                        <a href="#" class="social">@</a>
+                        <a href="#" class="social">in</a>
+                    </div>
+                    <p class="small-text">or use your email password</p>
+                    <input type="email" placeholder="✉ Email Address" required />
+                    <input type="password" placeholder="🔒 Password" required />
+                    <a href="#" class="forgot-password">Forgot your Password?</a>
+                    <button type="submit">Sign In</button>
+                </form>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div class="sign-up-form form-container">
+                <form action="#">
+                    <h1>Create Account</h1>
+                    <div class="social-container">
+                        <a href="#" class="social">G</a>
+                        <a href="#" class="social">f</a>
+                        <a href="#" class="social">@</a>
+                        <a href="#" class="social">in</a>
+                    </div>
+                    <p class="small-text">or use your email for registration</p>
+                    <input type="text" placeholder="👤 Full Name" required />
+                    <input type="email" placeholder="✉ Email Address" required />
+                    <input type="password" placeholder="🔒 Password" required />
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel" id="overlay-content">
+                    <h1 id="overlay-title">Hello, Friend!</h1>
+                    <p id="overlay-text">Register with your personal details to use all of site features</p>
+                    <button class="ghost" id="overlay-btn">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Backend/Sign in-up.js"></script>
+</body>
+</html>
