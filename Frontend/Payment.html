@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment - ExoraMarket</title>
+    <link rel="stylesheet" href="Payment.css">
+</head>
+<body>
+    <!-- Security Particles Background -->
+    <div class="security-particles" id="security-particles"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            🔒 SECURE PAYMENT PROCESSING | 256-BIT SSL ENCRYPTION | BANK-LEVEL SECURITY
+        </div>
+        
+        <div class="payment-header">
+            <div class="container">
+                <nav class="payment-nav">
+                    <div class="logo">ExoraMarket</div>
+                    <div class="security-indicator">
+                        <div class="security-badge">
+                            🛡️ SECURE
+                        </div>
+                        <div class="security-badge ssl-indicator">
+                            🔐 SSL VERIFIED
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Progress Steps -->
+    <section class="progress-container">
+        <div class="container">
+            <div class="progress-steps">
+                <div class="step completed">
+                    <div class="step-number">✓</div>
+                    <span>Cart</span>
+                </div>
+                <div class="step completed">
+                    <div class="step-number">✓</div>
+                    <span>Checkout</span>
+                </div>
+                <div class="step active">
+                    <div class="step-number">💳</div>
+                    <span>Payment</span>
+                </div>
+                <div class="step pending">
+                    <div class="step-number">4</div>
+                    <span>Confirmation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="payment-grid">
+                <!-- Payment Methods Section -->
+                <div class="payment-methods-section">
+                    <h2 class="section-title">🔐 Choose Payment Method</h2>
+                    
+                    <!-- Payment Options -->
+                    <div class="payment-options">
+                        <div class="payment-option active" data-method="card">
+                            <div class="payment-icon">💳</div>
+                            <div class="payment-name">Credit/Debit Card</div>
+                            <div class="payment-description">Visa, Mastercard, American Express</div>
+                        </div>
+                        
+                        <div class="payment-option" data-method="momo">
+                            <div class="payment-icon">📱</div>
+                            <div class="payment-name">Mobile Money</div>
+                            <div class="payment-description">MTN, Airtel, Tigo Cash</div>
+                        </div>
+                        
+                        <div class="payment-option" data-method="bank">
+                            <div class="payment-icon">🏦</div>
+                            <div class="payment-name">Bank Transfer</div>
+                            <div class="payment-description">Direct bank account transfer</div>
+                        </div>
+                        
+                        <div class="payment-option" data-method="paypal">
+                            <div class="payment-icon">🅿️</div>
+                            <div class="payment-name">PayPal</div>
+                            <div class="payment-description">Quick & secure PayPal payment</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Forms -->
+                    <div class="payment-forms">
+                        <!-- Credit Card Form -->
+                        <div class="payment-form active" id="card-form">
+                            <div class="form-group">
+                                <div class="card-input-group floating-label">
+                                    <input type="text" id="card-number" required maxlength="19">
+                                    <label>Card Number</label>
+                                    <div class="card-type-icon" id="card-type"></div>
+                                    <div class="validation-indicator" id="card-validation"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group floating-label">
+                                    <input type="text" id="card-expiry" required maxlength="5" placeholder="MM/YY">
+                                    <label>Expiry Date</label>
+                                    <div class="validation-indicator" id="expiry-validation"></div>
+                                </div>
+                                <div class="form-group floating-label">
+                                    <input type="text" id="card-cvv" required maxlength="4" placeholder="CVV">
+                                    <label>Security Code</label>
+                                    <div class="validation-indicator" id="cvv-validation"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group floating-label">
+                                <input type="text" id="card-name" required>
+                                <label>Cardholder Name</label>
+                                <div class="validation-indicator" id="name-validation"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile Money Form -->
+                        <div class="payment-form" id="momo-form">
+                            <div class="momo-providers">
+                                <div class="momo-provider" data-provider="mtn">
+                                    <div class="provider-logo">📱</div>
+                                    <div class="provider-name">MTN MoMo</div>
+                                </div>
+                                <div class="momo-provider" data-provider="airtel">
+                                    <div class="provider-logo">📲</div>
+                                    <div class="provider-name">Airtel Money</div>
+                                </div>
+                                <div class="momo-provider" data-provider="tigo">
+                                    <div class="provider-logo">💸</div>
+                                    <div class="provider-name">Tigo Cash</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group floating-label">
+                                <input type="tel" id="momo-number" required placeholder="+250 788 123 456">
+                                <label>Mobile Number</label>
+                                <div class="validation-indicator" id="momo-validation"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bank Transfer Form -->
+                        <div class="payment-form" id="bank-form">
+                            <div class="bank-grid">
+                                <div class="bank-option" data-bank="bok">
+                                    <div class="bank-logo">🏛️</div>
+                                    <div class="provider-name">Bank of Kigali</div>
+                                </div>
+                                <div class="bank-option" data-bank="equity">
+                                    <div class="bank-logo">🏦</div>
+                                    <div class="provider-name">Equity Bank</div>
+                                </div>
+                                <div class="bank-option" data-bank="gt">
+                                    <div class="bank-logo">🏪</div>
+                                    <div class="provider-name">GT Bank</div>
+                                </div>
+                                <div class="bank-option" data-bank="coge">
+                                    <div class="bank-logo">🏢</div>
+                                    <div class="provider-name">Cogebanque</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group floating-label">
+                                <input type="text" id="account-number" required>
+                                <label>Account Number</label>
+                                <div class="validation-indicator" id="account-validation"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- PayPal Form -->
+                        <div class="payment-form" id="paypal-form">
+                            <div style="text-align: center; padding: 3rem;">
+                                <div style="font-size: 4rem; margin-bottom: 1rem;">🅿️</div>
+                                <h3 style="color: rgb(21, 36, 22); margin-bottom: 1rem;">PayPal Payment</h3>
+                                <p style="color: rgba(21, 36, 22, 0.7); margin-bottom: 2rem;">
+                                    You will be redirected to PayPal to complete your payment securely.
+                                </p>
+                                <div style="background: linear-gradient(135deg, rgba(83, 216, 214, 0.1), rgba(190, 227, 87, 0.1)); 
+                                           padding: 1.5rem; border-radius: 15px; border: 2px solid rgba(83, 216, 214, 0.3);">
+                                    <strong>✅ Safe & Secure</strong><br>
+                                    <small>Your payment information is never stored on our servers</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h2 class="summary-title">Order Summary</h2>
+                    
+                    <!-- Order Items -->
+                    <div class="order-items">
+                        <div class="order-item">
+                            <div class="item-image">📱</div>
+                            <div class="item-details">
+                                <div class="item-name">Premium Smartphone Pro</div>
+                                <div class="item-specs">Black, 128GB × 1</div>
+                            </div>
+                            <div class="item-price">749,000 RWF</div>
+                        </div>
+                        
+                        <div class="order-item">
+                            <div class="item-image">👟</div>
+                            <div class="item-details">
+                                <div class="item-name">Athletic Running Shoes</div>
+                                <div class="item-specs">Blue, Size 42 × 1</div>
+                            </div>
+                            <div class="item-price">129,000 RWF</div>
+                        </div>
+                        
+                        <div class="order-item">
+                            <div class="item-image">👕</div>
+                            <div class="item-details">
+                                <div class="item-name">Designer Cotton T-Shirt</div>
+                                <div class="item-specs">White, Large × 2</div>
+                            </div>
+                            <div class="item-price">78,000 RWF</div>
+                        </div>
+                        
+                        <div class="order-item">
+                            <div class="item-image">🎧</div>
+                            <div class="item-details">
+                                <div class="item-name">Wireless Headphones</div>
+                                <div class="item-specs">Black, Over-ear × 1</div>
+                            </div>
+                            <div class="item-price">45,000 RWF</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pricing Breakdown -->
+                    <div class="pricing-breakdown">
+                        <div class="price-row">
+                            <span class="price-label">🛍️ Subtotal (5 items)</span>
+                            <span class="price-value">1,001,000 RWF</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-label">🚚 Shipping</span>
+                            <span class="price-value">FREE</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-label">💰 You Save</span>
+                            <span class="price-value savings-value">-305,000 RWF</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-label">📋 Total</span>
+                            <span class="price-value" id="final-total">1,001,000 RWF</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Security Features -->
+                    <div class="security-features">
+                        <div class="security-title">🛡️ Your Payment is Protected</div>
+                        <div class="security-grid">
+                            <div class="security-feature">
+                                <span class="security-icon">🔒</span>
+                                <span>SSL Encrypted</span>
+                            </div>
+                            <div class="security-feature">
+                                <span class="security-icon">🛡️</span>
+                                <span>PCI Compliant</span>
+                            </div>
+                            <div class="security-feature">
+                                <span class="security-icon">🏦</span>
+                                <span>Bank Level Security</span>
+                            </div>
+                            <div class="security-feature">
+                                <span class="security-icon">💳</span>
+                                <span>Fraud Protection</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Complete Payment Button -->
+                    <button class="complete-payment-btn" onclick="processPayment()">
+                        🚀 Complete Payment - <span id="payment-total">1,001,000 RWF</span>
+                    </button>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <div class="trust-icon">🔒</div>
+                            <div class="trust-label">Secure</div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">⚡</div>
+                            <div class="trust-label">Instant</div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">🛡️</div>
+                            <div class="trust-label">Protected</div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">✅</div>
+                            <div class="trust-label">Verified</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../Backend/Payment.js"></script>
+</body>
+</html>
